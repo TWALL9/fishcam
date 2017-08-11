@@ -11,14 +11,11 @@ int main(int argc, char** argv){
 		return -1;
 	}
 	Mat frame;
-	Mat edges;
+	Mat frameWithFish;
 	for (;;){
 		cap >> frame;
-		cvtColor(frame, edges, CV_BGR2GRAY);
-		GaussianBlur(edges, edges, Size(7,7), 1.5, 1.5);
-		Canny(edges, edges, 0, 30, 3);
-		if(waitKey(30) >= 0)
-			break;
+		cvtColor(frame, frameWithFish, CV_BGR2GRAY);
+		
 	}
 	return 0;
 }
